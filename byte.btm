@@ -1,0 +1,19 @@
+RULE trace null
+
+CLASS java.lang.NullPointerException
+
+METHOD <init>
+AT ENTRY
+IF true
+DO openTrace("C", "E:\mq\icp\stack.log")
+ENDRULE
+
+RULE trace null1
+
+CLASS java.lang.NullPointerException
+
+METHOD <init>
+AT EXIT
+IF true
+DO traceStack("\n\n\nfound the caller!\n","C", 10)
+ENDRULE
