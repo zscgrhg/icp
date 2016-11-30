@@ -5,15 +5,7 @@ CLASS java.lang.NullPointerException
 METHOD <init>
 AT ENTRY
 IF true
-DO openTrace("C", "stack.log")
+DO openTrace("C", "stack.log");
+    traceStack("\n\n\nfound the caller!\n","C", 10)
 ENDRULE
 
-RULE trace null1
-
-CLASS java.lang.NullPointerException
-
-METHOD <init>
-AT EXIT
-IF true
-DO traceStack("\n\n\nfound the caller!\n","C", 10)
-ENDRULE
