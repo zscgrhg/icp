@@ -5,7 +5,7 @@ CLASS java.lang.NullPointerException
 METHOD <init>
 AT ENTRY
 IF true
-DO openTrace("C", "E:\mq\icp\stack.log")
+DO openTrace("C", "stack.log")
 ENDRULE
 
 RULE trace null1
